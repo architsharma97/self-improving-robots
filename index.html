@@ -290,63 +290,47 @@
         <center><span style="font-size:25px" class="line-break">Archit Sharma*, Ahmed Ahmed*, Rehaan Ahmad, Chelsea Finn</span></center>
       </div>
       <div class="table-like" style="justify-content:space-evenly;max-width:900px;margin:auto;">
+        <hr>
+        <center><span style="font-size:25px" class="line-break">Stanford University</span></center>
+      </div>
+      <div class="table-like" style="justify-content:space-evenly;max-width:900px;margin:auto;">
           <hr>
-          <center><span style="font-size:20px" class="line-break"><a href="https://architsharma97.github.io/self_improving_robots/">Paper</a></span></center>
+          <center><span style="font-size:20px" class="line-break"><a href="https://architsharma97.github.io/self-improving-robots/">Paper</a></span></center>
       </div>
 
-      <div style="width:800px; margin:0 auto" align="justify">
-        <p><b>Abstract.</b> In imitation and reinforcement learning, the cost of
+      <div style="max-width:900px">
+        <hr>
+        <center><h1>Overview</h1></center>
+        <p>
+          <b>Summary.</b> In imitation and reinforcement learning, the cost of
           human supervision limits the amount of data that robots can be
           trained on. An aspirational goal is to construct self-improving
           robots: robots that can learn and improve on their own, from
           autonomous interaction with minimal human supervision or
           oversight. Such robots could collect and train on much larger
           datasets, and thus learn more robust and performant policies.
-          While reinforcement learning offers a framework for such autonomous learning via trial-and-error, practical realizations end
-          up requiring extensive human supervision for reward function de-
-          sign and repeated resetting of the environment between episodes of
-          interactions. In this work, we propose MEDAL++, a novel design
-          for self-improving robotic systems: given a small set of expert
-          demonstrations at the start, the robot autonomously practices the
-          task by learning to both do and undo the task, simultaneously
-          inferring the reward function from the demonstrations. The
-          policy and reward function are learned end-to-end from high-
-          dimensional visual inputs, bypassing the need for explicit state
-          estimation or task-specific pre-training for visual encoders used
-          in prior work. We first evaluate our proposed algorithm on a sim-
-          ulated non-episodic benchmark EARL, finding that MEDAL++
-          is both more data efficient and gets up to 30% better final
-          performance compared to state-of-the-art vision-based methods.
-          Our real-robot experiments show that MEDAL++ can be applied
-          to manipulation problems in larger environments than those
-          considered in prior work, and autonomous self-improvement can
-          improve the success rate by 30-70% over behavior cloning on just
-          the expert data.</p>
-      </div>
-
-      <div style="max-width:900px">
-        <hr>
-        <center><h1>MEDAL++ Overview</h1></center>
-        <p>
-          MEDAL++ is an autonomous reinforcement learning algorithm that trains a forward policy to do the task, and a backward policy to undo the task
-          towards states visited by an expert. Starting with a small set of demonstrations collected by an expert, the forward and backward policy interact with
-          the environment in a cyclic fashion, switching control after a fixed number of steps. Chaining the forward and backward policies allows the robot
-          to self-improve, minimizing the need for humans to reset the environment after every episode. Importantly, MEDAL++ learns end-to-end from high-dimensional
-          visual inputs and learns the reward function from the expert demonstrations, bypassing the need for reward engineering. This allows MEDAL++ to be applied
-          in the real world, taking a step towards self-improving robotic systems.
+          MEDAL++ is an autonomous reinforcement learning algorithm that trains a forward policy to do the task,
+          and a backward policy to undo the task towards states visited by an expert. Starting with a small set 
+          of demonstrations collected by an expert, the forward and backward policy interact with the environment 
+          in a cyclic fashion, switching control after a fixed number of steps. Chaining the forward and backward 
+          policies allows the robot to self-improve, minimizing the need for humans to reset the environment after 
+          every episode. Importantly, MEDAL++ learns end-to-end from high-dimensional visual inputs and learns the 
+          reward function from the expert demonstrations, bypassing the need for reward engineering. In contrast to 
+          prior work, this allows MEDAL++ to be applied in the real world, improving the success rate by 30-70% 
+          over behavior cloning policies in practice. Overall, MEDAL++ takes a step towards simple and general 
+          self-improving robotic systems. 
         </p>
 
         <div class="table-like" style="justify-content:space-evenly;margin:auto;padding:0px;">
           <div>
-            <video width="800" autoplay muted>
+            <video width="800" autoplay muted loop>
               <source src="resources/overview.mp4" type="video/mp4">
             </video>
           </div>
         </div>
 
         <p>
-          This website features training and evaluation videos of MEDAL++ being used to learn three manipulation tasks using Franka Panda arm. Training videos show the robot practicing
-          the task autonomously, and the evaluation videos demonstrate the improved policies learned by MEDAL++, compared to policies learned by behavior cloning.
+          This website features autonomous training and evaluation videos of MEDAL++ on three manipulation tasks using the Franka Panda arm: cloth hanging, peg insertion and bowl cover.
         </p>
       </div>
 
